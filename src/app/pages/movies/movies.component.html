@@ -1,0 +1,7 @@
+<h2>Peliculas</h2>
+<button (click)="addMovie()">Agregar</button>
+<div class="movies-list">
+  <div *ngFor="let item of movies">
+    <app-movie-item [movie]="item"></app-movie-item>
+  </div>
+</div>
