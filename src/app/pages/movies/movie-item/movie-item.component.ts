@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Movie } from 'src/app/globals/types/movie';
 import { MovieService } from 'src/app/globals/services/movie.service';
@@ -19,7 +19,7 @@ export class MovieItemComponent implements OnInit {
 
   movieId:number;
 
-  constructor(private activatedRoute:ActivatedRoute, private movieService:MovieService) {
+  constructor(private activatedRoute:ActivatedRoute, private movieService:MovieService, private router:Router) {
     this.activatedRoute.params.subscribe(urlParams => {
       this.movieId = +urlParams.movieId;
     });
@@ -36,5 +36,21 @@ export class MovieItemComponent implements OnInit {
         console.error('Error al traer la pelicula', err);
       });
     }
+  }
+
+  goBack() {
+    console.log('Quieres regresar al listado');
+    this.router.navigate(['..']);
+  }
+
+  goToDetails(id:number) {
+    console.log('Quieres ir al detalle de la pelicula ' + id);
+    this.router.navigate([id], {
+      relativeTo: this.activatedRoute,
+      queryParams: {
+        param1: true,
+        param2: false
+      }
+    });
   }
 }

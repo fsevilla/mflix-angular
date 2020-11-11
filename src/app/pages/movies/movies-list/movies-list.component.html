@@ -1,0 +1,13 @@
+<h3>Listado de Peliculas</h3>
+
+<form (submit)="filter()">
+  <input [(ngModel)]="query" name="buscar" type="text">
+  <button>Buscar</button>
+</form>
+
+<div class="movies-list">
+  <div *ngFor="let item of filteredMovies">
+    <button (click)="selectMovie(item)">Seleccionar pelicula</button>
+    <app-movie-item [movie]="item"></app-movie-item>
+  </div>
+</div>

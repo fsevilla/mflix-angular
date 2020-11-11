@@ -1,6 +1,8 @@
-<a *ngIf="movieId" routerLink="/movies">Regresar al listado</a>
+<!-- <a *ngIf="movieId" routerLink="/movies">Regresar al listado</a> -->
+<button *ngIf="movieId" (click)="goBack()">Regresar al listado</button>
 
 <h3>{{movie.title}}</h3>
 <p>{{movie.description}}</p>
 
-<a *ngIf="!movieId" [routerLink]="movie.id">Ver mas</a>
+<a *ngIf="!movieId" [routerLink]="movie.id" [queryParams]="{param1:true}">Ver mas</a>
+<button *ngIf="!movieId" (click)="goToDetails(movie.id)">Ver mas</button>

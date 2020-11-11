@@ -1,8 +1,6 @@
 <h2>Peliculas</h2>
-
-<button (click)="addMovie()">Agregar</button>
-<div class="movies-list">
-  <div *ngFor="let item of movies">
-    <app-movie-item [movie]="item"></app-movie-item>
-  </div>
-</div>
+<hr>
+<router-outlet></router-outlet>
+<!-- <app-movie-item [movie]="selectedMovie"></app-movie-item>
+<hr>
+<app-movies-list (onMovieSelected)="handleMovieSelected($event)"></app-movies-list> -->
