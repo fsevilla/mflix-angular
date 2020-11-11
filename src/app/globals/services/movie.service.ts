@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 import { Movie } from '../types/movie';
 
 @Injectable({
@@ -13,13 +15,23 @@ export class MovieService {
     { title: 'Pelicula 4', description: 'lorem ipsum', duration: 100 }
   ];
 
-  constructor() { }
+  constructor(private httpClient:HttpClient) { }
 
-  getAll():Promise<Movie[]> {
+  getAllFake():Promise<Movie[]> {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(this.movies);
       }, 3000);
     });
+  }
+
+  getAll():Promise<any> {
+    const url = 'https://jsonplaceholder.typicode.com/albums';
+    return this.httpClient.get(url).toPromise();
+  }
+
+  getById(id:number):Promise<any> {
+    const url = 'https://jsonplaceholder.typicode.com/albums/'+id;
+    return this.httpClient.get(url).toPromise();
   }
 }

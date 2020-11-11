@@ -10,6 +10,8 @@ import { MovieService } from 'src/app/globals/services/movie.service';
 })
 export class MoviesComponent implements OnInit, AfterViewInit, OnChanges {
 
+  texto:string = "lorem";
+
   movie:Movie = {
     title: 'Algo',
     description: 'lorem',
@@ -26,6 +28,8 @@ export class MoviesComponent implements OnInit, AfterViewInit, OnChanges {
     console.log('Componente listo');
     this.movieService.getAll().then(datos => {
       this.movies = datos.slice();
+    }).catch(err => {
+      console.log('Error: ', err);
     });
   }
 
