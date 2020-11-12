@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +9,7 @@ import { MoviesComponent } from './pages/movies/movies.component';
 import { MovieItemComponent } from './pages/movies/movie-item/movie-item.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { MoviesListComponent } from './pages/movies/movies-list/movies-list.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,15 @@ import { MoviesListComponent } from './pages/movies/movies-list/movies-list.comp
     MoviesComponent,
     MovieItemComponent,
     Error404Component,
-    MoviesListComponent
+    MoviesListComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,22 @@
+<h2>Registro</h2>
+<form [formGroup]="form" (submit)="signup($event)">
+  <div>
+    <label for="name">Nombre:</label>
+    <input type="text" formControlName="name" name="name">
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" formControlName="email" name="email">
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" formControlName="password" name="password">
+  </div>
+  <div>
+    <label for="confirm">Confirm Password:</label>
+    <input type="password" formControlName="confirm" name="confirm">
+    <span *ngIf="form.errors && form.errors.mismatch">Las contraseñas no coinciden</span>
+  </div>
+
+  <button>Enviar {{form.valid}}</button>
+</form>

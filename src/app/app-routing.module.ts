@@ -5,6 +5,7 @@ import { MoviesComponent } from 'src/app/pages/movies/movies.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { MovieItemComponent } from './pages/movies/movie-item/movie-item.component';
 import { MoviesListComponent } from './pages/movies/movies-list/movies-list.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'movies', pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
     { path: '', component: MoviesListComponent },
     { path: ':movieId', component: MovieItemComponent }
   ] },
+  { path: 'signup', component: SignupComponent },
   { path: '**', component: Error404Component }
 ];
 
