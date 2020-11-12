@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   nombre = "Francisco";
+
+  onRate(e) {
+    console.log('rate change: ', e);
+  }
+
+  onStarClick(e) {
+    console.log('rate change: ', e);
+  }
 }

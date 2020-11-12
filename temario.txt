@@ -1,0 +1,25 @@
+Arquitectura Angular
+Estructura Carpetas
+Bootstrap
+Componentes
+Comunicacion Padre e Hijo
+Comunicacion Hijo a Padre
+Servicios
+HttpClient
+Routing (navigate, activatedRoute)
+Rutas hijas
+Formularios ngModel
+Formularios Reactivos
+Environments
+
+------
+
+SCSS
+Angular Material 
+Sesiones (Autenticacion / Permisos)
+Guardas
+Directivas
+Pipes
+Desencapsulacion
+Pruebas Automatizadas
+Deploy con Integracion Continua (Heroku)

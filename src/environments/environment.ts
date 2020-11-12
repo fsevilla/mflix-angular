@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://jsonplaceholder.typicode.com/'
+  apiBasePath: 'http://3a104e077f03.ngrok.io/',
+  apiUrl: 'api/'
 };
 
 /*

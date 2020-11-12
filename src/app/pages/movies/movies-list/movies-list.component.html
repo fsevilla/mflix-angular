@@ -5,9 +5,15 @@
   <button>Buscar</button>
 </form>
 
+
+<h3>Grid List</h3>
+<app-grid-list [items]="movies">
+  <h1>Hola mundo!</h1>
+</app-grid-list>
+
 <div class="movies-list">
   <div *ngFor="let item of filteredMovies">
-    <button (click)="selectMovie(item)">Seleccionar pelicula</button>
+    <!-- <button (click)="selectMovie(item)">Seleccionar pelicula</button> -->
     <app-movie-item [movie]="item"></app-movie-item>
   </div>
 </div>

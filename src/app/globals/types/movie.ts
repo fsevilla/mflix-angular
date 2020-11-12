@@ -1,6 +1,21 @@
 export interface Movie {
   id?:number,
   title:string;
-  description:string;
-  duration:number;
+  plot:string;
+  poster?:string;
+  imdb:IMDB;
+  rated:string;
+  awards: Awards;
+}
+
+interface IMDB {
+  rating: number;
+  votes: number;
+  id: number;
+}
+
+interface Awards {
+  wins: number;
+  nominations: number;
+  text: string;
 }

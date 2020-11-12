@@ -13,12 +13,12 @@ export class CrudService {
   constructor(private httpClient:HttpClient) { }
 
   getAll():Promise<any> {
-    const url = environment.apiUrl + this.endpoint;
+    const url = environment.apiBasePath + environment.apiUrl + this.endpoint;
     return this.httpClient.get(url).toPromise();
   }
 
   getById(id:number):Promise<any> {
-    const url = environment.apiUrl + this.endpoint + '/' + id;
+    const url = environment.apiBasePath + environment.apiUrl + this.endpoint + '/' + id;
     return this.httpClient.get(url).toPromise();
   }
 }

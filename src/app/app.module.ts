@@ -11,6 +11,8 @@ import { Error404Component } from './pages/error404/error404.component';
 import { MoviesListComponent } from './pages/movies/movies-list/movies-list.component';
 import { SignupComponent } from './pages/signup/signup.component';
 
+import { GridListModule } from './modules/grid-list/grid-list.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,8 @@ import { SignupComponent } from './pages/signup/signup.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

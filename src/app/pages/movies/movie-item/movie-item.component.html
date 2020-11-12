@@ -1,8 +1,16 @@
 <!-- <a *ngIf="movieId" routerLink="/movies">Regresar al listado</a> -->
 <button *ngIf="movieId" (click)="goBack()">Regresar al listado</button>
 
-<h3>{{movie.title}}</h3>
-<p>{{movie.description}}</p>
+<div class="movie-card">
+  <h3>{{movie.title}}</h3>
+  <p>{{movie.plot}}</p>
+  <img *ngIf="movie.poster" [src]="movie.poster" alt="movie poster">
+  <img *ngIf="!movie.poster" src="https://zoomnearby.com/resources/media/images/common/Image-not-found.jpg" alt="poster not found">
 
-<a *ngIf="!movieId" [routerLink]="movie.id" [queryParams]="{param1:true}">Ver mas</a>
-<button *ngIf="!movieId" (click)="goToDetails(movie.id)">Ver mas</button>
+  <div>
+    Rate: {{movie.imdb.rating}}
+  </div>
+
+  <a *ngIf="!movieId" [routerLink]="movie.id" [queryParams]="{param1:true}">Ver mas</a>
+  <button *ngIf="!movieId" (click)="goToDetails(movie.id)">Ver mas</button>
+</div>

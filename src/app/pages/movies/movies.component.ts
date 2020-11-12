@@ -10,9 +10,11 @@ export class MoviesComponent implements OnInit {
 
   selectedMovie:Movie = {
     title: "",
-    description: "",
-    duration: 0
-  }
+    plot: "",
+    imdb: { rating:0, votes: 0, id: 0 },
+    rated: "",
+    awards: {wins:0, nominations:0, text: ""}
+  };
   
   constructor() {}
 
