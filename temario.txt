@@ -12,15 +12,14 @@ Formularios ngModel
 Formularios Reactivos
 Environments
 SCSS
+Angular Material 
+Directivas!
+Pipes
 
 ------
 
-
-Angular Material 
-Sesiones (Autenticacion / Permisos)
+*Sesiones (Autenticacion / Permisos)
 Guardias
-Directivas
-Pipes
 Desencapsulacion
 Pruebas Automatizadas
 Deploy con Integracion Continua (Heroku)

@@ -6,6 +6,7 @@ export interface Movie {
   imdb:IMDB;
   rated:string;
   awards: Awards;
+  released?:string;
 }
 
 interface IMDB {

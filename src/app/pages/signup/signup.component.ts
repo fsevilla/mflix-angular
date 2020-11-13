@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
+import { SignupService } from 'src/app/globals/services/signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +15,7 @@ export class SignupComponent implements OnInit {
   user:any = {};
   form:FormGroup;
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder, private signupService:SignupService, private router:Router, private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -27,7 +31,13 @@ export class SignupComponent implements OnInit {
   signup(e) {
     console.log('Form: ', this.form);
     if(this.form.valid) {
-      console.log('Usuario', this.user);
+      const user = this.form.getRawValue();
+      this.signupService.signup(user).then(response => {
+        this.showSnack('El usuario se creo correctamente');
+        this.router.navigate(['/login']);
+      }).catch(err => {
+        this.showSnack('El usuario esta duplicado');
+      })
     } else {
       console.log('Faltan datos!')
     }
@@ -42,6 +52,12 @@ export class SignupComponent implements OnInit {
       return { mismatch: true};
     }
     
+  }
+
+  showSnack(message) {
+    this.snackBar.open(message, '', {
+      duration: 3000
+    });
   }
 
 

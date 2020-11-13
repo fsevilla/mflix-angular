@@ -37,6 +37,8 @@
       <mat-error *ngIf="form.errors && form.errors.mismatch">Las contraseñas no coinciden</mat-error>
     </p>
 
-    <button mat-raised-button color="primary">Enviar {{form.valid}}</button>
+    <button mat-raised-button color="primary">Enviar</button>
+    <p>Si ya tienes cuenta <a routerLink="/login">Inicia sesión</a></p>
+
   </form>
 </div>

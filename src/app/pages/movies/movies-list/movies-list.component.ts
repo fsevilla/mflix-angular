@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/cor
 
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
 
 import { Movie } from 'src/app/globals/types/movie';
 import { MovieService } from 'src/app/globals/services/movie.service';
@@ -17,6 +18,7 @@ export class MoviesListComponent implements OnInit {
   filteredMovies:Array<Movie>;
 
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   query:string = "";
 
@@ -27,12 +29,18 @@ export class MoviesListComponent implements OnInit {
 
   constructor(private movieService:MovieService) { }
 
+  private setDataSource(data) {
+    this.dataSource = new MatTableDataSource(data);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
+
   ngOnInit(): void {
     this.movieService.getAll().then(datos => {
       this.movies = datos;
-      this.filteredMovies = datos;
-      this.dataSource = new MatTableDataSource(datos);
-      this.dataSource.sort = this.sort;
+      this.filteredMovies = datos.slice();
+      this.setDataSource(datos);
+      
     }).catch(err => {
       console.log('Error: ', err);
     });
@@ -45,7 +53,7 @@ export class MoviesListComponent implements OnInit {
 
   filter() {
     this.filteredMovies = this.movies.filter(movie => {
-      return movie.title.includes(this.query);
+      return movie.title.toLowerCase().includes(this.query.toLowerCase());
     })
   }
 
@@ -53,6 +61,16 @@ export class MoviesListComponent implements OnInit {
     if(e.key === 'Enter') {
       this.filter();
     }
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+
+    const filteredMovies = this.movies.filter(movie => {
+      return movie.title.toLowerCase().includes(filterValue.toLowerCase());
+    })
+
+    this.setDataSource(filteredMovies);
   }
 
 }

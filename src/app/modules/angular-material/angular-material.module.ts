@@ -12,6 +12,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 @NgModule({
@@ -28,7 +31,9 @@ import {MatSortModule} from '@angular/material/sort';
     MatCardModule,
     MatGridListModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatPaginatorModule,
+    MatSnackBarModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -42,7 +47,9 @@ import {MatSortModule} from '@angular/material/sort';
     MatCardModule,
     MatGridListModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatPaginatorModule,
+    MatSnackBarModule
   ]
 })
 export class AngularMaterialModule { }

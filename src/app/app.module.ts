@@ -15,6 +15,11 @@ import { AngularMaterialModule } from './modules/angular-material/angular-materi
 
 import { GridListModule } from './modules/grid-list/grid-list.module';
 import { HeaderComponent } from './layout/header/header.component';
+import { AnchorClickDirective } from './globals/directives/anchor-click.directive';
+import { CancelSubmitDirective } from './globals/directives/cancel-submit.directive';
+import { PosterUrlDirective } from './globals/directives/poster-url.directive';
+import { MxDatePipe } from './globals/pipes/mx-date.pipe';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,12 @@ import { HeaderComponent } from './layout/header/header.component';
     Error404Component,
     MoviesListComponent,
     SignupComponent,
-    HeaderComponent
+    HeaderComponent,
+    AnchorClickDirective,
+    CancelSubmitDirective,
+    PosterUrlDirective,
+    MxDatePipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

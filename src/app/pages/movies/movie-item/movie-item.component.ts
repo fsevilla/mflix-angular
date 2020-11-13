@@ -55,4 +55,8 @@ export class MovieItemComponent implements OnInit {
       }
     });
   }
+
+  cardClick(e) {
+    console.log('Hiciste click en una tarjeta', e);
+  }
 }

@@ -20,6 +20,11 @@
     </mat-grid-list>
   </mat-tab>
   <mat-tab label="Lista">
+
+    <mat-form-field class="filter-input" >
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
     
     <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
@@ -41,7 +46,11 @@
     
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
     </table>
+
+    <mat-paginator [pageSizeOptions]="[10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
 
   </mat-tab>
   
