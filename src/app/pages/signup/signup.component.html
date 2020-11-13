@@ -1,22 +1,42 @@
-<h2>Registro</h2>
-<form [formGroup]="form" (submit)="signup($event)">
-  <div>
-    <label for="name">Nombre:</label>
-    <input type="text" formControlName="name" name="name">
-  </div>
-  <div>
-    <label for="email">Email:</label>
-    <input type="email" formControlName="email" name="email">
-  </div>
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" formControlName="password" name="password">
-  </div>
-  <div>
-    <label for="confirm">Confirm Password:</label>
-    <input type="password" formControlName="confirm" name="confirm">
-    <span *ngIf="form.errors && form.errors.mismatch">Las contraseñas no coinciden</span>
-  </div>
+<div class="form-wrapper">
+  <h2>Registro</h2>
+  <form [formGroup]="form" (submit)="signup($event)">
+    <div>
+      <mat-form-field appearance="standard">
+        <mat-label>Enter your Name</mat-label>
+        <input matInput placeholder="" formControlName="name" required>
+        <mat-error>Este campo es requerido</mat-error>
+      </mat-form-field>
+    </div>
+    
+    <div>
+      <mat-form-field appearance="standard">
+        <mat-label>Enter your Email</mat-label>
+        <input matInput placeholder="" type="email" formControlName="email" required>
+        <mat-error>Este campo es requerido</mat-error>
+      </mat-form-field>
+    </div>
 
-  <button>Enviar {{form.valid}}</button>
-</form>
+    <div>
+      <mat-form-field appearance="standard">
+        <mat-label>Enter your Password</mat-label>
+        <input matInput type="password" placeholder="" formControlName="password" required>
+        <mat-error>Este campo es requerido</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="standard">
+        <mat-label>Confirm your Password</mat-label>
+        <input matInput type="password" placeholder="" formControlName="confirm" required>
+        <mat-error>Este campo es requerido</mat-error>
+      </mat-form-field>
+    </div>
+    
+    <p>
+      <mat-error *ngIf="form.errors && form.errors.mismatch">Las contraseñas no coinciden</mat-error>
+    </p>
+
+    <button mat-raised-button color="primary">Enviar {{form.valid}}</button>
+  </form>
+</div>

@@ -11,7 +11,10 @@ import { Error404Component } from './pages/error404/error404.component';
 import { MoviesListComponent } from './pages/movies/movies-list/movies-list.component';
 import { SignupComponent } from './pages/signup/signup.component';
 
+import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
+
 import { GridListModule } from './modules/grid-list/grid-list.module';
+import { HeaderComponent } from './layout/header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { GridListModule } from './modules/grid-list/grid-list.module';
     MovieItemComponent,
     Error404Component,
     MoviesListComponent,
-    SignupComponent
+    SignupComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,8 @@ import { GridListModule } from './modules/grid-list/grid-list.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    GridListModule
+    GridListModule,
+    AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

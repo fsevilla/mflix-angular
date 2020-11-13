@@ -1,0 +1,10 @@
+.main-container {
+  width: 100%;
+  height: calc(100vh-64px);
+  min-height: calc(100vh-64px);
+  border: 1px solid #555;
+
+  mat-drawer {
+    width: 250px;
+  }
+}

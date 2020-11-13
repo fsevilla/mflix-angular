@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBasePath: 'http://3a104e077f03.ngrok.io/',
+  apiBasePath: 'https://mflix-api.herokuapp.com/',
   apiUrl: 'api/'
 };
 

@@ -1,6 +1,7 @@
+@import './../.././/../../sass/variables';
 
 .movie-card {
-  background-color: lightblue;
+  background-color: $bgcolor;
 
   > img {
     max-width: 100%;
