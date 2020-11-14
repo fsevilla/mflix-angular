@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://jsonplaceholder.typicode.com/'
+  apiBasePath: 'https://mflix-api.herokuapp.com/',
+  apiUrl: 'api/'
 };

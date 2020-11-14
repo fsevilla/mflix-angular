@@ -1,4 +1,6 @@
 <mat-toolbar color="primary">
   <mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon>
   <span>MFlix Movies</span>
+  <span class="spacer"></span>
+  <a *ngIf="loggedIn" (click)="logout()">Cerrar sesión</a>
 </mat-toolbar>

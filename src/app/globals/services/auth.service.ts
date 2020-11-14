@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  loginStatus:BehaviorSubject<boolean> = new BehaviorSubject(this.isLoggedIn());
+
+  constructor() {}
 
   save(token:string) {
     sessionStorage.setItem('token', token);
+    this.loginStatus.next(true);
   }
 
   get() {
@@ -17,6 +21,7 @@ export class AuthService {
 
   clear() {
     sessionStorage.removeItem('token');
+    this.loginStatus.next(false);
   }
 
   isLoggedIn() {

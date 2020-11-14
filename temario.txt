@@ -16,11 +16,10 @@ Angular Material
 Directivas
 Pipes
 Guardias
+Sesiones (Autenticacion / Permisos)
+Desencapsulacion
 
 ------
 
-*Sesiones (Autenticacion / Permisos)
-
-Desencapsulacion
 Pruebas Automatizadas
 Deploy con Integracion Continua (Heroku)
