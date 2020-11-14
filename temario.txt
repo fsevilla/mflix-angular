@@ -18,8 +18,6 @@ Pipes
 Guardias
 Sesiones (Autenticacion / Permisos)
 Desencapsulacion
-
-------
-
 Pruebas Automatizadas
 Deploy con Integracion Continua (Heroku)
+------

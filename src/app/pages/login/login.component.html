@@ -1,5 +1,5 @@
 <div class="form-wrapper">
-  <h2>Inicio de Sesion</h2>
+  <h2 id="titulo">Inicio de Sesion</h2>
   <form (submit)="login()">
     <div>
       <mat-form-field appearance="standard">
@@ -15,7 +15,9 @@
       </mat-form-field>
     </div>
 
-    <button mat-raised-button color="primary">Iniciar sesion</button>
+    <p *ngIf="error" id="errorMsg">Credenciales incorrectas</p>
+
+    <button mat-raised-button color="primary" id="submit">Iniciar sesion</button>
     <p>Si no tienes cuenta <a routerLink="/signup">Registrate aqui</a></p>
   </form>
 </div>

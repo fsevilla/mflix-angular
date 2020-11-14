@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
+  error:boolean;
+
   constructor(
     private loginService:LoginService,
     private snackBar:MatSnackBar,
@@ -34,8 +36,10 @@ export class LoginComponent implements OnInit {
       console.log('Login response: ', response);
       this.authService.save(response.token);
       this.router.navigate(['/']);
+      this.error = false;
     }).catch(err => {
       console.log('Login error: ', err);
+      this.error = true;
       this.showSnack('Credenciales incorrectas');
     });
   }
