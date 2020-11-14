@@ -13,13 +13,14 @@ Formularios Reactivos
 Environments
 SCSS
 Angular Material 
-Directivas!
+Directivas
 Pipes
+Guardias
 
 ------
 
 *Sesiones (Autenticacion / Permisos)
-Guardias
+
 Desencapsulacion
 Pruebas Automatizadas
 Deploy con Integracion Continua (Heroku)

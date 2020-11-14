@@ -56,7 +56,9 @@ export class SignupComponent implements OnInit {
 
   showSnack(message) {
     this.snackBar.open(message, '', {
-      duration: 3000
+      duration: 3000,
+      verticalPosition: 'top',
+      horizontalPosition: 'end'
     });
   }
 

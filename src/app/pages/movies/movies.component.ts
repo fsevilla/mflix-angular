@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Movie } from 'src/app/globals/types/movie';
 
 @Component({
@@ -18,8 +19,7 @@ export class MoviesComponent implements OnInit {
   
   constructor() {}
 
-  ngOnInit() { 
-  }
+  ngOnInit() { }
 
   handleMovieSelected(movie:Movie) {
     console.log('La pelicula selecciona en el hijo fue: ', movie);
